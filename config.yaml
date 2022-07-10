@@ -2,6 +2,7 @@ baseURL: "https://adaxz.github.io/"
 languageCode: en-us
 title: Hugo
 theme: mini
+publishDir: docs
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
 defaultContentLanguage: zh
