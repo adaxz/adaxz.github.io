@@ -1,6 +1,6 @@
 baseURL: "https://adaxz.github.io/"
 languageCode: en-us
-title: Hugo
+title: 躺蓝
 theme: mini
 publishDir: docs
 
@@ -47,9 +47,9 @@ params:
   # Site Author
   author: Ada
   # Author biography
-  bio: Software Engineer
+  bio: “自在的黄铜”
   # Site Description, used in HTML meat
-  description: My Blog
+  description: 自留地
 
   ###########################################
   # Optional Configuration
