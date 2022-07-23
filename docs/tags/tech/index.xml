@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on 躺蓝</title>
+    <link>https://adaxz.github.io/tags/tech/</link>
+    <description>Recent content in tech on 躺蓝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jul 2022 19:56:44 +0800</lastBuildDate><atom:link href="https://adaxz.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>踏破铁鞋无觅处</title>
+      <link>https://adaxz.github.io/posts/%E8%B8%8F%E7%A0%B4%E9%93%81%E9%9E%8B%E6%97%A0%E8%A7%85%E5%A4%84/</link>
+      <pubDate>Mon, 11 Jul 2022 19:56:44 +0800</pubDate>
+      
+      <guid>https://adaxz.github.io/posts/%E8%B8%8F%E7%A0%B4%E9%93%81%E9%9E%8B%E6%97%A0%E8%A7%85%E5%A4%84/</guid>
+      <description>不太会写 tech blog，所以这篇主要是写上周前端新手解决一个陌生问题的过程，目的纯粹是给自己做一个记录。由于过程十分艰辛，但最后找到的实现方法非</description>
+    </item>
+    
+  </channel>
+</rss>

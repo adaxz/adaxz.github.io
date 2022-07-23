@@ -2,7 +2,7 @@
 title: "踏破铁鞋无觅处"
 date: 2022-07-11T19:56:44+08:00
 draft: false
-Tag: 
+tags: 
     - tech
 ---
 
@@ -22,13 +22,13 @@ Tag:
 
 # Second Try - Use JQuery
 
-在谷歌上搜了一圈，发现很多答案都是利用 JQuery 来识别。于是死马当活马医，在 Angular 里装了 JQuery，确实成功了，但是后面 Angular 不能及时识别网站的变化了，很多之前写好的功能都变得很奇怪。最初以为是 `focus` 出现了问题，浏览器的 `focus` 没有从 iframe 转回到主界面，结果调试了半天也没什么作用。搜了大半天，排除了各种可能因素，感觉问题应该在 JQuery 上。确实在 Angular 中使用 JQuery 会让 Angular 离开 `zone`，而这个 `zone` 就是用来检测 Angular 应用中的各种变化的，具体可以参考 [Zones in Angular](https://blog.thoughtram.io/angular/2016/02/01/zones-in-angular-2.html)。最后的结局办法是，在需要回到主 Angular 应用界面的时候，加上 `zone.run(() => {})`。
+在谷歌上搜了一圈，发现很多答案都是利用 JQuery 来识别。于是死马当活马医，在 Angular 里装了 JQuery，确实成功了，但是后面 Angular 不能及时识别网站的变化了，很多之前写好的功能都变得很奇怪。最初以为是 `focus` 出现了问题，浏览器的 `focus` 没有从 iframe 转回到主界面，结果调试了半天也没什么作用。搜了大半天，排除了各种可能因素，感觉问题应该在 JQuery 上。确实在 Angular 中使用 JQuery 会让 Angular 离开 `zone`，而这个 `zone` 就是用来检测 Angular 应用中的各种变化的，具体可以参考 [Zones in Angular](https://blog.thoughtram.io/angular/2016/02/01/zones-in-angular-2.html)。最后的解决办法是，在需要回到主 Angular 应用界面的时候，加上 `zone.run(() => {})`。
 
 **看上去好像问题都解决，屁，都是表象**。在 iframe 重新 load 内容以后（整个应用没有刷新），检测完全失效了，就算放在 Angular 的 `(onload)` 下，也完全没有效果。
 
 # Third Try - Insert an empty div and change attribute value of that div
 
-由于 JQuery 的方法还是有问题，加上 Angular 里用 JQuery 检测变化还是不太保险，于是打算放弃 JQuery 这条路。思考半天，还是打算沿用第一个方法的思路。在写入 iframe 的 source document 前，直接修改爬下来的网页的 html 和 javascript。修改的步骤是，首先在爬下来的 html 的最后加入一个空白的 `div`，并且赋予其 `id`。然后在还在改网页的 javascript 中添加 `contenxtmenu` 识别，callback function 是在新的空白 `div` 中添加属性，属性的值是点击当时的鼠标坐标（会在生成自定义右键菜单时用到）。在 Angular 这边，用 `MutationObserver` 检测这个空白 `div` 的变化。这个检测放在 Angular 的 `onload` method 下面。写完整个流程，大致测试了一下，好像没什么问题，重新 load iframe 也不会让检测失效，也避免了 Angular 直接离开 zone。
+由于 JQuery 的方法还是有问题，加上 Angular 里用 JQuery 检测变化还是不太保险，于是打算放弃 JQuery 这条路。思考半天，还是打算沿用第一个方法的思路。在写入 iframe 的 source document 前，直接修改爬下来的网页的 html 和 javascript。修改的步骤是，首先在爬下来的 html 的最后加入一个空白的 `div`，并且赋予其 `id`。然后在原网页的 javascript 中添加 `contenxtmenu` 识别，callback function 是在新的空白 `div` 中添加属性，属性的值是点击当时的鼠标坐标（会在生成自定义右键菜单时用到）。在 Angular 这边，用 `MutationObserver` 检测这个空白 `div` 的变化。这个检测放在 Angular 的 `onload` method 下面。写完整个流程，大致测试了一下，好像没什么问题，重新 load iframe 也不会让检测失效，也避免了 Angular 直接离开 zone。
 
 **很完美的样子，屁，都是表象**。当我点击了 iframe 内部界面的链接以后，检测失效了。由于 `MutationObserver` 是在 `onload` method 下面，而点击在 iframe 中 load 的网页中的内部链接，并不会让 iframe 整个重新 load。哈，另寻新路吧。 
 
