@@ -58,6 +58,7 @@ params:
   # To enable RSS, you could set `enableRSS: true`, default is `true`
   enableRSS: true
   # To enable comments, you may need to set `disqusShortname`
+  disqusShortname: yourDisqusShortname
   enableComments: true
   # To enable comments, you may need to set `googleAnalytics`
   enableGoogleAnalytics: true
