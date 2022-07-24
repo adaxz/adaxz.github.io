@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2022-07-24T10:03:18+08:00
-draft: true
+draft: false
 menu: "main"
 weight: 50
 ---
@@ -13,10 +13,10 @@ weight: 50
 `女权`、`宅`、`左`、`日饭`、`永远喜欢大野智 永远喜欢岚`、`所有爱好都是半桶水`、`喜欢散步时疯狂收听《跟宇宙结婚》`、`data/software engineer`
 
 ### 物理坐标
-  - 香港 杭州
+  * 香港 杭州
 
 ### 虚拟坐标
-  - [长毛像](https://m.cmx.im/web/@sadeyedlady)
-  - [豆瓣](https://www.douban.com/people/adaxiang1205)
-  - [Notion](https://adaaaaa.notion.site/03cd367b95a64ffea462c0b2bb67576c?v=1a1032fc21cb4647abdf2ec41346f14b)
-  - adaxiang3104[at]gmail.com
+  * [长毛像](https://m.cmx.im/web/@sadeyedlady)
+  * [豆瓣](https://www.douban.com/people/adaxiang1205)
+  * [Notion](https://adaaaaa.notion.site/03cd367b95a64ffea462c0b2bb67576c?v=1a1032fc21cb4647abdf2ec41346f14b)
+  * adaxiang3104[at]gmail.com
