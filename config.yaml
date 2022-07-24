@@ -14,7 +14,7 @@ hasCJKLanguage: true
 permalinks:
   posts: /posts/:title/
 
-paginate: 3
+paginate: 5
 
 googleAnalytics: G-B2M7T4BNNC
 disqusShortname: blog-yv6e0lnde7
@@ -37,9 +37,9 @@ markup:
 # Social links in footer, support github,twitter,stackoverflow,facebook
 social:
   # e.g.
-  github: your-github-link
-  twitter: your-github-link
-  stackoverflow: your-github-link
+  # github: your-github-link
+  # twitter: your-github-link
+  # stackoverflow: your-github-link
   # facebook: your-facebook-link
 
 # Site parameters
